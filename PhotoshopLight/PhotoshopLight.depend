@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1619001778 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
+1619085218 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
 	"Photos.h"
+	"Filtrs.h"
 	<sstream>
 
 1618584667 d:\_prog_liebs\sfml-2.5.1\include\sfml\graphics.hpp
@@ -1230,9 +1231,16 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1618840455 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photos.cpp
+1619014521 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photos.cpp
 	"Photos.h"
 
-1618931818 d:\projects\photoshopl\photoshoplight\photoshoplight\photos.h
+1619014302 d:\projects\photoshopl\photoshoplight\photoshoplight\photos.h
 	<SFML/Graphics.hpp>
+
+1619084240 d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.h
+	"Photos.h"
+	<SFML/Graphics.hpp>
+
+1619084224 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.cpp
+	"Filtrs.h"
 

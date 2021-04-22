@@ -1,4 +1,5 @@
 #include "Photos.h"
+#include "Filtrs.h"
 #include <sstream>
 
 int main()
@@ -10,7 +11,7 @@ int main()
                             sf::Style::Titlebar | sf::Style::Close);
     window.setVerticalSyncEnabled(true);
 
-
+Photos photo;
     sf::Font font;
     if (!font.loadFromFile("D:\\Projects\\PhotoshopL\\PhotoshopLight\\PhotoshopLight\\sansation.ttf"))
         {
@@ -27,11 +28,10 @@ int main()
         infoText.setOutlineThickness(2.2f);
         infoText.setPosition(5.2f, 5.1f);
 
-
         std::ostringstream containerForInfoText;
 
-    Photos photo;
 
+    Filtr filtr("1.png");
     while (window.isOpen())
     {
         sf::Event event;
@@ -41,13 +41,10 @@ int main()
                 window.close();
         }
 
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { photo.sprite.move(-0.5, 0); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { photo.sprite.move(0.5, 0); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { photo.sprite.move(0, -0.5); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { photo.sprite.move(0, 0.5); }
-
-
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {filtr.dark();}
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {filtr.light();}
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {filtr.saturationUp();}
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {filtr.saturationDown();}
 
         containerForInfoText.str("");
         containerForInfoText << "It's works!\n\n";
@@ -57,7 +54,7 @@ int main()
 
         window.clear();
         window.draw(infoText);
-        window.draw(photo.sprite);
+        window.draw(filtr.getSprite());
         window.display();
     }
 

@@ -49,6 +49,8 @@
 		<Linker>
 			<Add directory="D:/_Prog_Liebs/SFML/lib" />
 		</Linker>
+		<Unit filename="Filtrs.cpp" />
+		<Unit filename="Filtrs.h" />
 		<Unit filename="Photos.cpp" />
 		<Unit filename="Photos.h" />
 		<Unit filename="main.cpp" />

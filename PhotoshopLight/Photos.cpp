@@ -3,14 +3,7 @@
 
 Photos::Photos()
 {
-
-
-    //add image to prpgramm
-
     image.loadFromFile(path);
-
-    //add texture
-
     texture.loadFromImage(image);
 
     sprite.setTexture(texture);
@@ -19,4 +12,14 @@ Photos::Photos()
 
 Photos::~Photos()
 {
+}
+
+void Photos::setpath(std::string pathImage)
+{
+    path = pathImage;
+    image.loadFromFile(path);
+    texture.loadFromImage(image);
+
+    sprite.setTexture(texture);
+    sprite.setPosition( 0,0);
 }

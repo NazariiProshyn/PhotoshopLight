@@ -8,10 +8,10 @@ class Photos
 public:
 	Photos();
 	~Photos();
-
+void setpath(std::string pathImage);
 	 sf::Sprite sprite;
 private:
-    std::string path = "D:\\Projects\\PhotoshopL\\PhotoshopLight\\PhotoshopLight\\1.png";
+    std::string path = "1.png";
 
      sf::Image image;
      sf::Texture texture;
