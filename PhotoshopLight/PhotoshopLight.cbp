@@ -53,6 +53,8 @@
 		<Unit filename="Filtrs.h" />
 		<Unit filename="Photos.cpp" />
 		<Unit filename="Photos.h" />
+		<Unit filename="ViewController.cpp" />
+		<Unit filename="ViewController.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="openal32.dll" />
 		<Unit filename="sfml-audio-2.dll" />
