@@ -14,7 +14,7 @@ int main()
 
     ViewController view;
 
-    if (!view.checkFont())
+    if (!view.loadFont())
         {
             window.close();
             return 0;
@@ -32,14 +32,14 @@ int main()
                 }
 
 
-            view.imageEvents(event);
+            view.editImage(event);
 
         }
 
 		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {}
         //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {filtr.light();}
 
-        view.textView();
+        view.customizeTextView();
         window.clear();
         for(size_t i = 0; i < view.getsizeOfInfoText(); i++)
             {

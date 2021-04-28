@@ -3,17 +3,16 @@
 #include <SFML/Graphics.hpp>
 
 
-class Photos
+class Photo
 {
 public:
-	Photos();
-	~Photos();
+	Photo();
+	~Photo();
 
-    void setpath(std::string pathImage);
-
+    void setpath(const std::string& infoPath);
     sf::Sprite sprite;
 private:
-    std::string path = "1.png";
+    std::string path;
 
     sf::Image image;
     sf::Texture texture;

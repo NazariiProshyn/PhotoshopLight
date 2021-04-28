@@ -1,22 +1,18 @@
 #include "Photos.h"
 
 
-Photos::Photos()
+Photo::Photo()
 {
-    image.loadFromFile(path);
-    texture.loadFromImage(image);
 
-    sprite.setTexture(texture);
-    sprite.setPosition( 0,0);
 }
 
-Photos::~Photos()
+Photo::~Photo()
 {
 }
 
-void Photos::setpath(std::string pathImage)
+void Photo::setpath(const std::string& infoPath = "1.png")
 {
-    path = pathImage;
+    path = infoPath;
     image.loadFromFile(path);
     texture.loadFromImage(image);
 
