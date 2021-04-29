@@ -1237,7 +1237,7 @@
 1619612512 d:\projects\photoshopl\photoshoplight\photoshoplight\photos.h
 	<SFML/Graphics.hpp>
 
-1619612964 d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.h
+1619621293 d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.h
 	"Photos.h"
 	<SFML/Graphics.hpp>
 	<string>
@@ -1245,10 +1245,10 @@
 1619620101 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.cpp
 	"Filtrs.h"
 
-1619620524 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
+1619621268 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
 	"ViewController.h"
 
-1619620760 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
+1619689262 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
 	"Information.h"
 	"Photos.h"
 	"Filtrs.h"
