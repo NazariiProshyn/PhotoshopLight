@@ -2,13 +2,12 @@
 #include "Information.h"
 #include "Photos.h"
 #include "Filtrs.h"
+#include "ControllerLogic.h"
 #include <sstream>
 #include <string>
 #include <vector>
 
 
-
-//class final
 class ViewController final
 {
 public:
@@ -27,7 +26,6 @@ public:
 private:
 
     static const size_t sizeOfInfoText = 4;
-    static const size_t numofPictures  = 2;
 
 
     std::vector<sf::Text> infoText;
@@ -37,6 +35,6 @@ private:
 
     std::string path1 = "1.png";
     Filtr filtr1;
-
+    ControllerLogic controllerLogic;
     std::vector<Filtr> filtrs;
 };

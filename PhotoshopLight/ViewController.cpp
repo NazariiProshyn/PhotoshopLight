@@ -29,10 +29,6 @@ namespace NSConstanst
 
     const float        stepBetweenItems = 30.0f;
 
-    size_t numOfFiltr = 1;
-    size_t numFiltrToUse = 1;
-    size_t currentPicture = 1;
-
 };
 
 
@@ -50,7 +46,7 @@ void ViewController::customizeTextView()
 {
     for(size_t i = 0; i < sizeOfInfoText; ++i )
     {
-        if(i == NSConstanst::numOfFiltr)
+        if(i == controllerLogic.getcurrentFiltr())
         {
 
             infoText[i].setCharacterSize(NSConstanst::ActiveSize);
@@ -74,54 +70,39 @@ void ViewController::customizeTextView()
  void ViewController::editImage(const sf::Event& event)
  {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-    {//class for filtrs (next/previous)
-        if(NSConstanst::numOfFiltr == 3)
-        {
-                NSConstanst::numOfFiltr = 1;
-        }
-        else
-        {
-            ++NSConstanst::numOfFiltr;
-        }
+    {
+        controllerLogic.increaseFiltr();
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            if(NSConstanst::numOfFiltr == 1)
-            {
-                NSConstanst::numOfFiltr = 3;
-            }
-            else
-            {
-                --NSConstanst::numOfFiltr;
-            }
-        }
+    {
+        controllerLogic.reduceFiltr();
+    }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
-        {
-            if (NSConstanst::currentPicture == numofPictures){NSConstanst::currentPicture = 1;}
-            else {++NSConstanst::currentPicture;}
-        }
+    {
+        controllerLogic.increasePicture();
+    }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        {
-            switch(NSConstanst::numOfFiltr + NSConstanst::numFiltrToUse)
-            {//enum
-               // case 2: filtr1.dark();           break;
-               // case 3: filtr1.saturationDown(); break;
-                default:                         break;
-            }
-        }
+    {
+//            switch(NSConstanst::numOfFiltr + NSConstanst::numFiltrToUse)
+//            {//enum
+//               // case 2: filtr1.dark();           break;
+//               // case 3: filtr1.saturationDown(); break;
+//                default:                         break;
+//            }
+    }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        {
-            switch(NSConstanst::numOfFiltr + NSConstanst::numFiltrToUse)
-            {
-             //   case 2: filtr1.light();          break;
-             //   case 3: filtr1.saturationUp();   break;
-                default:                         break;
-            }
-        }
+    {
+//        switch(NSConstanst::numOfFiltr + NSConstanst::numFiltrToUse)
+//        {
+//         //   case 2: filtr1.light();          break;
+//         //   case 3: filtr1.saturationUp();   break;
+//            default:                         break;
+//        }
+    }
  }
 
 sf::Sprite ViewController::getSprite() const

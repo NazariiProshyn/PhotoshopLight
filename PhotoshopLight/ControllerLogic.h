@@ -7,6 +7,15 @@ public:
 	ControllerLogic();
 	~ControllerLogic() = default;
 
+	void increaseFiltr();
+	void reduceFiltr();
+
+	void increasePicture();
+	void reducePicture();
+
+	int  getcurrentFiltr() const {return currentFiltr;};
+	int  getcurrentPicture() const {return currentPicture;};
+
 private:
     static const int numberOfFiltrs   = 3;
     unsigned     int currentFiltr     = 1;
