@@ -2,24 +2,22 @@
 #include "Filtrs.h"
 #include "ViewController.h"
 
-
-int main()
+static int run()
 {
     const unsigned int wWidth = 800;
     const unsigned int wHeight = 600;
 
-    sf::RenderWindow window(sf::VideoMode(wWidth, wHeight), "Photoshop Light",
+    sf::RenderWindow window(sf::VideoMode(wWidth, wHeight), "Photoship Light",
                             sf::Style::Titlebar | sf::Style::Close);
     window.setVerticalSyncEnabled(true);
 
     ViewController view;
-
+    // TODO: use exc and throw when font didn't load
     if (!view.loadFont())
-        {
-            window.close();
-            return 0;
-        }
-
+    {
+        window.close();
+        return 1;
+    }
 
     while (window.isOpen())
     {
@@ -27,27 +25,29 @@ int main()
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed ||sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-                {
-                    window.close();
-                }
-
+            {
+                window.close();
+            }
 
             view.editImage(event);
 
         }
 
-		//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {}
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {filtr.light();}
-
         view.customizeTextView();
         window.clear();
         for(size_t i = 0; i < view.getsizeOfInfoText(); i++)
-            {
-                window.draw(view.getText(i));
-            }
+        {
+            window.draw(view.getText(i));
+        }
         window.draw(view.getSprite());
         window.display();
     }
 
     return 0;
+}
+
+
+int main()
+{
+    return run();
 }

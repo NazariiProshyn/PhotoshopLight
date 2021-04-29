@@ -1,5 +1,4 @@
 #include "ViewController.h"
-
 namespace NSConstanst
 {
     const std::vector<std::string> menuItems =
@@ -16,22 +15,22 @@ namespace NSConstanst
         "1.jpg"
     };
 
-    const sf::Color    nonActiveColor   = sf::Color::Red ;
+    const sf::Color    nonActiveColor   = sf::Color::Red;
     const unsigned int nonActiveSize    = 24;
     const float        nonActiveBorder  = 1.9f;
 
     const float        positionX        = 5.2f;
     const float        positionY        = 5.2f;
-
-    const sf::Color    ActiveColor      = sf::Color::Blue ;
+    //TODO: use same code style in member
+    const sf::Color    ActiveColor      = sf::Color::Blue;
     const unsigned int ActiveSize       = 29;
     const float        ActiveBorder     = 2.2f;
 
     const float        stepBetweenItems = 30.0f;
 
 };
-
-enum EFilterSelection
+// TODO: use enum class
+enum EFiltrSelection
 {
     BRIGHTNESS = 1,
     SATURATION = 2,
@@ -40,15 +39,16 @@ enum EFilterSelection
 
 
 ViewController::ViewController():filtr1{path1}
-{
+{   //TODO: diff between resize and reserve
     infoText.resize(sizeOfInfoText);
 
     for(size_t i = 0; i < NSConstanst::paths.size(); ++i)
     {
-        filtrs.push_back(Filtr {NSConstanst::paths[i]});
+        filtrs.push_back(Filter {NSConstanst::paths[i]});
     }
+    //TODO: cout size of filters
 }
-
+// TODO: rename refreshTextView
 void ViewController::customizeTextView()
 {
     for(size_t i = 0; i < sizeOfInfoText; ++i )
@@ -95,29 +95,32 @@ void ViewController::customizeTextView()
     {
         switch(controllerLogic.getcurrentFiltr())
         {
-            case EFilterSelection::BRIGHTNESS:
-                 filtr1.dark();           break;
-            case EFilterSelection::CONTRAST:
-                 filtr1.saturationDown(); break;
+            case EFiltrSelection::BRIGHTNESS:
+                 filtr1.dark();
+                 break;
+            case EFiltrSelection::CONTRAST:
+                 filtr1.saturationDown();
+                 break;
 
-            default:                      break;
+            default:
+                 break;
         }
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    {
+    {   //TODO: tabs
         switch(controllerLogic.getcurrentFiltr())
         {
-            case EFilterSelection::BRIGHTNESS:
+            case EFiltrSelection::BRIGHTNESS:
                  filtr1.light();          break;
-            case EFilterSelection::CONTRAST:
+            case EFiltrSelection::CONTRAST:
                  filtr1.saturationUp();   break;
             default:                      break;
         }
     }
  }
-
+//TODO: use in .h
 sf::Sprite ViewController::getSprite() const
 {
-   return filtr1.getSprite();
+    return filtr1.getSprite();
 }

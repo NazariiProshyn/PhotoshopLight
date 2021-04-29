@@ -8,7 +8,7 @@ ControllerLogic::ControllerLogic()
 void ControllerLogic::increaseFiltr()
 {
     if(currentFiltr == numberOfFiltrs)
-    {
+    {   //TODO: get rid of magic numbers
         currentFiltr = 1;
     }
     else

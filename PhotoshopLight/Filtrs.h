@@ -4,12 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-
-class Filtr final
+// TODO: rename class
+// TODO: rename files
+class Filter final
 {
 public:
-	Filtr(const std::string& pathImage);
-	~Filtr() = default;
+	Filter(const std::string& pathImage);
+	~Filter() = default;
 
     void dark();
     void light();
@@ -17,7 +18,7 @@ public:
     void saturationUp();
     void saturationDown();
 
-    const sf::Sprite getSprite()const {return photo.sprite;}
+    sf::Sprite getSprite()const {return photo.sprite;}
 private:
     Photo photo;
 };
