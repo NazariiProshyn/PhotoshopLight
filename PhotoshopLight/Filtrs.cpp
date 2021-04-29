@@ -17,10 +17,7 @@ Filtr::Filtr(const std::string& pathImage)
     photo.setpath(pathImage);
 }
 
-Filtr::~Filtr()
-{
 
-}
 
 void Filtr::dark()
 {

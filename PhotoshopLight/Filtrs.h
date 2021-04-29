@@ -4,11 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class Filtr
+class Filtr final
 {
 public:
 	Filtr(const std::string& pathImage);
-	~Filtr();
+	~Filtr() = default;
 
     void dark();
     void light();

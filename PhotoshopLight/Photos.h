@@ -3,11 +3,11 @@
 #include <SFML/Graphics.hpp>
 
 
-class Photo
+class Photo final
 {
 public:
 	Photo();
-	~Photo();
+	~Photo() = default;
 
     void setpath(const std::string& infoPath);
     sf::Sprite sprite;

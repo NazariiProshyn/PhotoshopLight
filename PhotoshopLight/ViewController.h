@@ -9,7 +9,7 @@
 
 
 //class final
-class ViewController
+class ViewController final
 {
 public:
 	ViewController();

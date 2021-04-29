@@ -5,6 +5,4 @@ ControllerLogic::ControllerLogic()
 
 }
 
-ControllerLogic::~ControllerLogic()
-{
-}
+

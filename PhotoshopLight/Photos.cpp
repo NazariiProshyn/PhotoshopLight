@@ -6,9 +6,6 @@ Photo::Photo()
 
 }
 
-Photo::~Photo()
-{
-}
 
 void Photo::setpath(const std::string& infoPath = "1.png")
 {
