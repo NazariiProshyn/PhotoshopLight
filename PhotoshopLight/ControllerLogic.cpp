@@ -49,7 +49,7 @@ void ControllerLogic::reducePicture()
     }
     else
     {
-        ++currentPicture;
+        --currentPicture;
     }
 }
 

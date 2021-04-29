@@ -4,10 +4,10 @@ namespace NSConstanst
 {
     const std::vector<std::string> menuItems =
     {
-        "Use UP and DOWN ",
-        "1.",
-        "2.",
-        "3."
+        "Use \"UP\" and \"DOWN\".",
+        "1.BRIGHTNESS",
+        "2.SATURATION",
+        "3.CONTRAST"
     };
 
     const std::vector<std::string> paths =
@@ -29,6 +29,13 @@ namespace NSConstanst
 
     const float        stepBetweenItems = 30.0f;
 
+};
+
+enum EFilterSelection
+{
+    BRIGHTNESS = 1,
+    SATURATION = 2,
+    CONTRAST   = 3
 };
 
 
@@ -86,27 +93,31 @@ void ViewController::customizeTextView()
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
-//            switch(NSConstanst::numOfFiltr + NSConstanst::numFiltrToUse)
-//            {//enum
-//               // case 2: filtr1.dark();           break;
-//               // case 3: filtr1.saturationDown(); break;
-//                default:                         break;
-//            }
+        switch(controllerLogic.getcurrentFiltr())
+        {
+            case EFilterSelection::BRIGHTNESS:
+                 filtr1.dark();           break;
+            case EFilterSelection::CONTRAST:
+                 filtr1.saturationDown(); break;
+
+            default:                      break;
+        }
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
-//        switch(NSConstanst::numOfFiltr + NSConstanst::numFiltrToUse)
-//        {
-//         //   case 2: filtr1.light();          break;
-//         //   case 3: filtr1.saturationUp();   break;
-//            default:                         break;
-//        }
+        switch(controllerLogic.getcurrentFiltr())
+        {
+            case EFilterSelection::BRIGHTNESS:
+                 filtr1.light();          break;
+            case EFilterSelection::CONTRAST:
+                 filtr1.saturationUp();   break;
+            default:                      break;
+        }
     }
  }
 
 sf::Sprite ViewController::getSprite() const
 {
-   // if(currentPicture == 2){return filtr2.getSprite();}
    return filtr1.getSprite();
 }

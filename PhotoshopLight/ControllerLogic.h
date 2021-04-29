@@ -1,5 +1,5 @@
 #pragma once
-
+#include <vector>
 
 class ControllerLogic final
 {
@@ -13,14 +13,14 @@ public:
 	void increasePicture();
 	void reducePicture();
 
-	int  getcurrentFiltr() const {return currentFiltr;};
-	int  getcurrentPicture() const {return currentPicture;};
+	size_t  getcurrentFiltr() const {return currentFiltr;};
+	size_t  getcurrentPicture() const {return currentPicture;};
 
 private:
-    static const int numberOfFiltrs   = 3;
-    unsigned     int currentFiltr     = 1;
+    static const size_t numberOfFiltrs   = 3;
+    size_t              currentFiltr     = 1;
 
-    static const int numberOfPictures = 2;
-    unsigned     int currentPicture   = 1;
+    static const size_t numberOfPictures = 2;
+    size_t              currentPicture   = 1;
 
 };
