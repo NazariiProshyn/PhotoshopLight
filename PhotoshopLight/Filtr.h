@@ -1,15 +1,15 @@
 #pragma once
 
-#include "Photos.h"
+#include "Photo.h"
 #include <SFML/Graphics.hpp>
 #include <string>
 
-// TODO: rename class
-// TODO: rename files
+
 class Filter final
 {
 public:
-	Filter(const std::string& pathImage);
+	Filter(const std::string& pathImage):
+    photo{pathImage}{};
 	~Filter() = default;
 
     void dark();
@@ -21,5 +21,9 @@ public:
     sf::Sprite getSprite()const {return photo.sprite;}
 private:
     Photo photo;
+    size_t red   = 255;
+    size_t green = 255;
+    size_t blue  = 255;
+    size_t alpha = 255;
 };
 

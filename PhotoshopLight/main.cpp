@@ -1,5 +1,5 @@
-#include "Photos.h"
-#include "Filtrs.h"
+#include "Photo.h"
+#include "Filtr.h"
 #include "ViewController.h"
 
 static int run()
@@ -33,9 +33,9 @@ static int run()
 
         }
 
-        view.customizeTextView();
+        view.refreshTextView();
         window.clear();
-        for(size_t i = 0; i < view.getsizeOfInfoText(); i++)
+        for (size_t i = 0; i < view.getSizeOfInfoText(); i++)
         {
             window.draw(view.getText(i));
         }

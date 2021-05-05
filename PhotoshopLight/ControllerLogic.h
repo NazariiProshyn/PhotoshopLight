@@ -18,11 +18,8 @@ public:
 	size_t  getcurrentPicture() const {return currentPicture;};
 
 private:
-    // TODO: move to cpp namespace
-    static const size_t numberOfFiltrs   = 3;
-    size_t              currentFiltr     = 1;
 
-    static const size_t numberOfPictures = 2;
-    size_t              currentPicture   = 1;
+    size_t  currentFiltr   = 1;
+    size_t  currentPicture = 1;
 
 };

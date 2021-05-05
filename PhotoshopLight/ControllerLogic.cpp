@@ -1,5 +1,13 @@
 #include "ControllerLogic.h"
 
+namespace NSFiltrs
+{
+     const size_t numberOfFiltrs   = 3;
+     const size_t numberOfPictures = 2;
+     const size_t minNumberInMenu  = 1;
+};
+
+
 ControllerLogic::ControllerLogic()
 {
 
@@ -7,9 +15,9 @@ ControllerLogic::ControllerLogic()
 
 void ControllerLogic::increaseFiltr()
 {
-    if(currentFiltr == numberOfFiltrs)
-    {   //TODO: get rid of magic numbers
-        currentFiltr = 1;
+    if (currentFiltr == NSFiltrs::numberOfFiltrs)
+    {
+        currentFiltr = NSFiltrs::minNumberInMenu;
     }
     else
     {
@@ -19,9 +27,9 @@ void ControllerLogic::increaseFiltr()
 
 void ControllerLogic::reduceFiltr()
 {
-    if(currentFiltr == 1)
+    if (currentFiltr == NSFiltrs::minNumberInMenu)
     {
-        currentFiltr = numberOfFiltrs;
+        currentFiltr = NSFiltrs::numberOfFiltrs;
     }
     else
     {
@@ -31,9 +39,9 @@ void ControllerLogic::reduceFiltr()
 
 void ControllerLogic::increasePicture()
 {
-    if(currentPicture == numberOfPictures)
+    if (currentPicture == NSFiltrs::numberOfPictures)
     {
-        currentPicture = 1;
+        currentPicture = NSFiltrs::minNumberInMenu;
     }
     else
     {
@@ -43,9 +51,9 @@ void ControllerLogic::increasePicture()
 
 void ControllerLogic::reducePicture()
 {
-    if(currentPicture == 1)
+    if (currentPicture == NSFiltrs::minNumberInMenu)
     {
-        currentPicture = numberOfPictures;
+        currentPicture = NSFiltrs::numberOfPictures;
     }
     else
     {

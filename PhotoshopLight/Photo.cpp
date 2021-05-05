@@ -1,14 +1,7 @@
-#include "Photos.h"
-
-// TODO: default
-Photo::Photo()
-{
-
-}
+#include "Photo.h"
 
 // TODO: exc img load from file
-// TODO: rename method
-void Photo::setpath(const std::string& infoPath = "1.png")
+Photo::Photo(const std::string& infoPath)
 {
     path = infoPath;
     image.loadFromFile(path);

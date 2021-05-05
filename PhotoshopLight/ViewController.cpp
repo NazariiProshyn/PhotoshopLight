@@ -21,10 +21,10 @@ namespace NSConstanst
 
     const float        positionX        = 5.2f;
     const float        positionY        = 5.2f;
-    //TODO: use same code style in member
-    const sf::Color    ActiveColor      = sf::Color::Blue;
-    const unsigned int ActiveSize       = 29;
-    const float        ActiveBorder     = 2.2f;
+
+    const sf::Color    activeColor      = sf::Color::Blue;
+    const unsigned int activeSize       = 29;
+    const float        activeBorder     = 2.2f;
 
     const float        stepBetweenItems = 30.0f;
 
@@ -38,27 +38,21 @@ enum EFiltrSelection
 };
 
 
-ViewController::ViewController():filtr1{path1}
+ViewController::ViewController():filter{path}
 {   //TODO: diff between resize and reserve
     infoText.resize(sizeOfInfoText);
-
-    for(size_t i = 0; i < NSConstanst::paths.size(); ++i)
-    {
-        filtrs.push_back(Filter {NSConstanst::paths[i]});
-    }
-    //TODO: cout size of filters
 }
-// TODO: rename refreshTextView
-void ViewController::customizeTextView()
+
+void ViewController::refreshTextView()
 {
-    for(size_t i = 0; i < sizeOfInfoText; ++i )
+    for (size_t i = 0; i < sizeOfInfoText; ++i )
     {
-        if(i == controllerLogic.getcurrentFiltr())
+        if (i == controllerLogic.getcurrentFiltr())
         {
 
-            infoText[i].setCharacterSize(NSConstanst::ActiveSize);
-            infoText[i].setOutlineColor(NSConstanst::ActiveColor);
-            infoText[i].setOutlineThickness(NSConstanst::ActiveBorder);
+            infoText[i].setCharacterSize(NSConstanst::activeSize);
+            infoText[i].setOutlineColor(NSConstanst::activeColor);
+            infoText[i].setOutlineThickness(NSConstanst::activeBorder);
         }
         else
         {
@@ -93,13 +87,13 @@ void ViewController::customizeTextView()
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
-        switch(controllerLogic.getcurrentFiltr())
+        switch (controllerLogic.getcurrentFiltr())
         {
             case EFiltrSelection::BRIGHTNESS:
-                 filtr1.dark();
+                 filter.dark();
                  break;
             case EFiltrSelection::CONTRAST:
-                 filtr1.saturationDown();
+                 filter.saturationDown();
                  break;
 
             default:
@@ -108,19 +102,17 @@ void ViewController::customizeTextView()
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    {   //TODO: tabs
-        switch(controllerLogic.getcurrentFiltr())
+    {
+        switch (controllerLogic.getcurrentFiltr())
         {
             case EFiltrSelection::BRIGHTNESS:
-                 filtr1.light();          break;
+                 filter.light();
+                 break;
             case EFiltrSelection::CONTRAST:
-                 filtr1.saturationUp();   break;
-            default:                      break;
+                 filter.saturationUp();
+                 break;
+            default:
+                 break;
         }
     }
  }
-//TODO: use in .h
-sf::Sprite ViewController::getSprite() const
-{
-    return filtr1.getSprite();
-}

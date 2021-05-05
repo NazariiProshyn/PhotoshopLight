@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1619710560 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
-	"Photos.h"
-	"Filtrs.h"
+1620172873 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
+	"Photo.h"
+	"Filtr.h"
 	"ViewController.h"
 
 1618584667 d:\_prog_liebs\sfml-2.5.1\include\sfml\graphics.hpp
@@ -1231,27 +1231,27 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1619707522 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photos.cpp
+1620172409 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photos.cpp
 	"Photos.h"
 
-1619707899 d:\projects\photoshopl\photoshoplight\photoshoplight\photos.h
+1620171970 d:\projects\photoshopl\photoshoplight\photoshoplight\photos.h
 	<SFML/Graphics.hpp>
 
-1619708130 d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.h
+1620172461 d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.h
 	"Photos.h"
 	<SFML/Graphics.hpp>
 	<string>
 
-1619708869 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.cpp
+1620172449 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.cpp
 	"Filtrs.h"
 
-1619710343 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
+1620173583 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
 	"ViewController.h"
 
-1619710075 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
+1620173684 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
 	"Information.h"
-	"Photos.h"
-	"Filtrs.h"
+	"Photo.h"
+	"Filtr.h"
 	"ControllerLogic.h"
 	<sstream>
 	<string>
@@ -1262,9 +1262,23 @@
 1619442887 source:d:\projects\photoshopl\photoshoplight\photoshoplight\infoforview.cpp
 	"ViewController.h"
 
-1619710445 source:d:\projects\photoshopl\photoshoplight\photoshoplight\controllerlogic.cpp
+1620172843 source:d:\projects\photoshopl\photoshoplight\photoshoplight\controllerlogic.cpp
 	"ControllerLogic.h"
 
-1619710443 d:\projects\photoshopl\photoshoplight\photoshoplight\controllerlogic.h
+1619715089 d:\projects\photoshopl\photoshoplight\photoshoplight\controllerlogic.h
 	<vector>
+
+1620172772 d:\projects\photoshopl\photoshoplight\photoshoplight\photo.h
+	<SFML/Graphics.hpp>
+
+1620172977 d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.h
+	"Photo.h"
+	<SFML/Graphics.hpp>
+	<string>
+
+1620173282 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.cpp
+	"Filtr.h"
+
+1620172684 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photo.cpp
+	"Photo.h"
 
