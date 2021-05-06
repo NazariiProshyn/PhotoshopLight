@@ -16,7 +16,7 @@ public:
 	~ViewController() = default;
 
     void refreshTextView();
-    bool loadFont(){ return font.loadFromFile("sansation.ttf");};
+    bool loadFont(){ return font.loadFromFile(fontpath);};
 
     void editImage(const sf::Event& event);
     // TODO: return const reference
@@ -27,13 +27,13 @@ public:
 private:
 
     static const size_t sizeOfInfoText = 4;
-    const std::string fontpath = "1";
+    const std::string fontpath = "font.ttf";
 
     std::vector<sf::Text> infoText;
 
     sf::Font font;
 
-    std::string path = "1.png";
+    std::string path = "1.jpg";
     Filter filter;
     ControllerLogic controllerLogic;
 

@@ -11,31 +11,53 @@ namespace NSColors
 
 void Filter::dark()
 {
-    // TODO: check bouds(межі виразу)
-    if (red > NSColors::minColorValue)
+    for (size_t i = 0; i < photo.getSizeX(); ++i)
     {
-        red   -= NSColors::step;
-        green -= NSColors::step;
-        blue  -= NSColors::step;
+        for (size_t j = 0; j < photo.getSizeY(); ++j)
+        {
+
+            color = photo.activeImage.getPixel(i,j);
+                if (color.r > NSColors::step &&
+                    color.g > NSColors::step &&
+                    color.b > NSColors::step)
+                {
+                    color.r -= NSColors::step;
+                    color.g -= NSColors::step;
+                    color.b -= NSColors::step;
+
+                    photo.activeImage.setPixel(i,j,color);
+                }
+                else
+                {
+                    checkBounds = false;
+                    if (color.r > NSColors::step)
+                    {
+                        color.r -= NSColors::step;
+                    }
+                    if (color.g > NSColors::step)
+                    {
+                        color.g -= NSColors::step;
+                    }
+                    if (color.b > NSColors::step)
+                    {
+                        color.b -= NSColors::step;
+                    }
+
+                    photo.activeImage.setPixel(i,j,color);
+                }
+        }
     }
 
-    photo.sprite.setColor(sf::Color(red, green, blue, alpha));
+    photo.setImage(checkBounds);
+
 }
 
 void Filter::light()
 {
 
-    if (red < NSColors::maxColorValue)
-    {
-        red   += NSColors::step;
-        green += NSColors::step;
-        blue  += NSColors::step;
-    }
-
-    photo.sprite.setColor(sf::Color(red, green, blue, alpha));
 }
 
-void Filter::saturationDown()
+void Filter::transparencyDown()
 {
 
     if (alpha > NSColors::minColorValue)
@@ -46,9 +68,9 @@ void Filter::saturationDown()
     photo.sprite.setColor(sf::Color(red, green, blue, alpha));
 }
 
-void Filter::saturationUp()
+void Filter::transparencyUp()
 {
-
+    //maxcolorv
     if (alpha < NSColors::maxColorValue)
     {
         alpha += NSColors::step;
@@ -57,3 +79,67 @@ void Filter::saturationUp()
     photo.sprite.setColor(sf::Color(red, green, blue, alpha));
 }
 
+
+void Filter::contrastUp()
+{
+    size_t lightBound = NSColors::maxColorValue - NSColors::step;
+
+    for (size_t i = 0; i < photo.getSizeX(); ++i)
+    {
+        for (size_t j = 0; j < photo.getSizeY(); ++j)
+        {
+            color = photo.activeImage.getPixel(i,j);
+            if (color.r < NSColors::maxColorValue &&
+                color.b < NSColors::maxColorValue &&
+                color.g < NSColors::maxColorValue)
+            {
+                if (color.r < lightBound &&
+                    color.g < lightBound &&
+                    color.b < lightBound)
+                {
+                    color.r += NSColors::step;
+                    color.g += NSColors::step;
+                    color.b += NSColors::step;
+
+                    photo.activeImage.setPixel(i,j,color);
+                }
+
+            }
+
+        }
+    }
+
+    photo.setImage();
+}
+
+void Filter::contrastDown()
+{
+        // TODO: check bouds(межі виразу)
+
+    for (size_t i = 0; i < photo.getSizeX(); ++i)
+    {
+        for (size_t j = 0; j < photo.getSizeY(); ++j)
+        {
+            color = photo.activeImage.getPixel(i,j);
+            if (color.r > NSColors::minColorValue &&
+                color.b > NSColors::minColorValue &&
+                color.g > NSColors::minColorValue)
+            {
+                if (color.r > NSColors::step &&
+                    color.g > NSColors::step &&
+                    color.b > NSColors::step)
+                {
+                    color.r -= NSColors::step;
+                    color.g -= NSColors::step;
+                    color.b -= NSColors::step;
+
+                    photo.activeImage.setPixel(i,j,color);
+                }
+
+            }
+
+        }
+    }
+
+    photo.setImage();
+}

@@ -4,9 +4,9 @@ namespace NSConstanst
     const std::vector<std::string> menuItems =
     {
         "Use \"UP\" and \"DOWN\".",
-        "1.BRIGHTNESS",
-        "2.SATURATION",
-        "3.CONTRAST"
+        "1.CONTRAST",
+        "2.BRIGHTNESS",
+        "3.TRANSPARENCY"
     };
 
     const std::vector<std::string> paths =
@@ -29,17 +29,17 @@ namespace NSConstanst
     const float        stepBetweenItems = 30.0f;
 
 };
-// TODO: use enum class
-enum EFiltrSelection
+
+enum class EFiltrSelection
 {
-    BRIGHTNESS = 1,
-    SATURATION = 2,
-    CONTRAST   = 3
+    CONTRAST = 1,
+    BRIGHTNESS = 2,
+    TRANSPARENCY   = 3
 };
 
 
 ViewController::ViewController():filter{path}
-{   //TODO: diff between resize and reserve
+{
     infoText.resize(sizeOfInfoText);
 }
 
@@ -89,11 +89,14 @@ void ViewController::refreshTextView()
     {
         switch (controllerLogic.getcurrentFiltr())
         {
-            case EFiltrSelection::BRIGHTNESS:
+            case static_cast<int>(EFiltrSelection::CONTRAST):
+                 filter.contrastDown();
+                 break;
+            case static_cast<int>(EFiltrSelection::BRIGHTNESS):
                  filter.dark();
                  break;
-            case EFiltrSelection::CONTRAST:
-                 filter.saturationDown();
+            case static_cast<int>(EFiltrSelection::TRANSPARENCY):
+                 filter.transparencyDown();
                  break;
 
             default:
@@ -105,11 +108,11 @@ void ViewController::refreshTextView()
     {
         switch (controllerLogic.getcurrentFiltr())
         {
-            case EFiltrSelection::BRIGHTNESS:
-                 filter.light();
+            case static_cast<int>(EFiltrSelection::CONTRAST):
+                 filter.contrastUp();
                  break;
-            case EFiltrSelection::CONTRAST:
-                 filter.saturationUp();
+            case static_cast<int>(EFiltrSelection::TRANSPARENCY):
+                 filter.transparencyUp();
                  break;
             default:
                  break;

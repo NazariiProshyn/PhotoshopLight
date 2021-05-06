@@ -4,8 +4,8 @@
 
 static int run()
 {
-    const unsigned int wWidth = 800;
-    const unsigned int wHeight = 600;
+    const unsigned int wWidth = 1300;
+    const unsigned int wHeight = 900;
 
     sf::RenderWindow window(sf::VideoMode(wWidth, wHeight), "Photoship Light",
                             sf::Style::Titlebar | sf::Style::Close);

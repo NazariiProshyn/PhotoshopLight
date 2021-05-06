@@ -15,15 +15,22 @@ public:
     void dark();
     void light();
 
-    void saturationUp();
-    void saturationDown();
+    void contrastUp();
+    void contrastDown();
 
-    sf::Sprite getSprite()const {return photo.sprite;}
+    void transparencyUp();
+    void transparencyDown();
+
+    sf::Sprite getSprite()const {return photo.getSprite();}
 private:
+
     Photo photo;
+    sf::Color color{0,0,0,0};
+    bool checkBounds = true;
     size_t red   = 255;
     size_t green = 255;
     size_t blue  = 255;
     size_t alpha = 255;
+
 };
 

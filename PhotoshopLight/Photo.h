@@ -11,15 +11,22 @@ public:
 	~Photo() = default;
 
     void setpath(const std::string& infoPath);
-    // TODO: private
-    sf::Sprite sprite;
-private:
-    std::string path;
+    sf::Sprite getSprite() const {return sprite;};
 
-    sf::Image image;
+    void setImage(bool chooseImage);
+    void setImage();
+
+    size_t getSizeX()const {return mainImage.getSize().x; };
+    size_t getSizeY()const {return mainImage.getSize().y; };
+    //Todo: private
+    sf::Sprite sprite;
+
+    sf::Image mainImage;
+    sf::Image savedImage;
+    sf::Image activeImage;
+private:
+
     sf::Texture texture;
 
-    size_t sizeX = 0;
-    size_t sizeY = 0;
 };
 

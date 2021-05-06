@@ -51,10 +51,10 @@
 		</Linker>
 		<Unit filename="ControllerLogic.cpp" />
 		<Unit filename="ControllerLogic.h" />
-		<Unit filename="Filtrs.cpp" />
-		<Unit filename="Filtrs.h" />
-		<Unit filename="Photos.cpp" />
-		<Unit filename="Photos.h" />
+		<Unit filename="Filtr.cpp" />
+		<Unit filename="Filtr.h" />
+		<Unit filename="Photo.cpp" />
+		<Unit filename="Photo.h" />
 		<Unit filename="ViewController.cpp" />
 		<Unit filename="ViewController.h" />
 		<Unit filename="main.cpp" />
