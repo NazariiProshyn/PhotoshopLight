@@ -46,3 +46,7 @@ void Photo::setImage(bool chooseImage)
     sprite.setPosition(NSCoordinates::coordinateX,NSCoordinates::coordinateY);
  }
 
+ void Photo::setColorForSprite(size_t r,size_t g,size_t b,size_t a)
+ {
+     sprite.setColor(sf::Color(r,g,b,a));
+ }

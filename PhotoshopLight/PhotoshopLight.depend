@@ -1,7 +1,5 @@
 # depslib dependency file v1.0
-1620294179 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
-	"Photo.h"
-	"Filtr.h"
+1620399304 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
 	"ViewController.h"
 
 1618584667 d:\_prog_liebs\sfml-2.5.1\include\sfml\graphics.hpp
@@ -1245,7 +1243,7 @@
 1620172449 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.cpp
 	"Filtrs.h"
 
-1620297454 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
+1620314127 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
 	"ViewController.h"
 
 1620226745 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
@@ -1268,17 +1266,23 @@
 1619715089 d:\projects\photoshopl\photoshoplight\photoshoplight\controllerlogic.h
 	<vector>
 
-1620296467 d:\projects\photoshopl\photoshoplight\photoshoplight\photo.h
+1620401980 d:\projects\photoshopl\photoshoplight\photoshoplight\photo.h
 	<SFML/Graphics.hpp>
 
-1620294862 d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.h
+1620398912 d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.h
 	"Photo.h"
 	<SFML/Graphics.hpp>
 	<string>
 
-1620297563 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.cpp
+1620401980 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.cpp
 	"Filtr.h"
 
-1620296589 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photo.cpp
+1620398310 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photo.cpp
 	"Photo.h"
+
+1620392297 source:d:\projects\photoshopl\photoshoplight\photoshoplight\exception.cpp
+	"Exception.h"
+
+1620392365 d:\projects\photoshopl\photoshoplight\photoshoplight\exception.h
+	<string>
 

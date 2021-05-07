@@ -1,6 +1,26 @@
-#include "Photo.h"
-#include "Filtr.h"
 #include "ViewController.h"
+
+
+
+
+
+
+
+
+
+
+
+//TODO: Gettera return const reference
+
+//TODO: TAB
+
+
+
+
+
+
+
+
 
 static int run()
 {

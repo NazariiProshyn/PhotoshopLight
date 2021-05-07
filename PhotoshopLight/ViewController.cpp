@@ -111,6 +111,9 @@ void ViewController::refreshTextView()
             case static_cast<int>(EFiltrSelection::CONTRAST):
                  filter.contrastUp();
                  break;
+            case static_cast<int>(EFiltrSelection::BRIGHTNESS):
+                 filter.light();
+                 break;
             case static_cast<int>(EFiltrSelection::TRANSPARENCY):
                  filter.transparencyUp();
                  break;
