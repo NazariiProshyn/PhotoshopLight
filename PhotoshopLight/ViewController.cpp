@@ -15,6 +15,8 @@ namespace NSConstanst
         "1.jpg"
     };
 
+    std::string numOfThreads = "NumOfThreads: ";
+
     const sf::Color    nonActiveColor   = sf::Color::Red;
     const unsigned int nonActiveSize    = 24;
     const float        nonActiveBorder  = 1.9f;
@@ -90,6 +92,7 @@ void ViewController::refreshTextView()
         switch (controllerLogic.getcurrentFiltr())
         {
             case static_cast<int>(EFiltrSelection::CONTRAST):
+
                  filter.contrastDown();
                  break;
             case static_cast<int>(EFiltrSelection::BRIGHTNESS):
@@ -102,7 +105,10 @@ void ViewController::refreshTextView()
             default:
                  break;
         }
+
     }
+
+
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
@@ -121,4 +127,10 @@ void ViewController::refreshTextView()
                  break;
         }
     }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+    {
+        filter.setOriginalImage();
+    }
+
  }

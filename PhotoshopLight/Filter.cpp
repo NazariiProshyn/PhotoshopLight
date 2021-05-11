@@ -1,4 +1,4 @@
-#include "Filtr.h"
+#include "Filter.h"
 
 namespace NSColors
 {
@@ -11,6 +11,8 @@ namespace NSColors
 
 void Filter::dark()
 {
+    std::lock_guard<std::mutex> lock(mut);
+
     if (!checkBoundsLight)
     {
         checkBoundsLight = true;
@@ -21,7 +23,7 @@ void Filter::dark()
     {
         for (size_t j = 0; j < photo.getSizeY(); ++j)
         {
-            color = photo.activeImage.getPixel(i,j);
+            color = photo.getPixel(i,j);
             if (color.r > NSColors::step &&
                 color.g > NSColors::step &&
                 color.b > NSColors::step)
@@ -46,7 +48,7 @@ void Filter::dark()
                     color.b -= NSColors::step;
                 }
             }
-            photo.activeImage.setPixel(i,j,color);
+            photo.setPixel(i,j,color);
         }
     }
 
@@ -56,7 +58,9 @@ void Filter::dark()
 
 void Filter::light()
 {
-     if (!checkBoundsDark)
+    std::lock_guard<std::mutex> lock(mut);
+
+    if (!checkBoundsDark)
     {
         checkBoundsDark  = true;
         photo.setSavedImage();
@@ -68,7 +72,7 @@ void Filter::light()
     {
         for (size_t j = 0; j < photo.getSizeY(); ++j)
         {
-            color = photo.activeImage.getPixel(i,j);
+            color = photo.getPixel(i,j);
 
             if (color.r < lightBound &&
                 color.g < lightBound &&
@@ -94,7 +98,7 @@ void Filter::light()
                     color.b += NSColors::step;
                 }
             }
-            photo.activeImage.setPixel(i,j,color);
+            photo.setPixel(i,j,color);
         }
     }
 
@@ -103,6 +107,8 @@ void Filter::light()
 
 void Filter::transparencyDown()
 {
+    std::lock_guard<std::mutex> lock(mut);
+
     if (alpha > NSColors::minColorValue)
     {
         alpha -= NSColors::step;
@@ -114,6 +120,8 @@ void Filter::transparencyDown()
 
 void Filter::transparencyUp()
 {
+    std::lock_guard<std::mutex> lock(mut);
+
     if (alpha < NSColors::maxColorValue)
     {
         alpha += NSColors::step;
@@ -126,6 +134,8 @@ void Filter::transparencyUp()
 
 void Filter::contrastUp()
 {
+    std::lock_guard<std::mutex> lock(mut);
+
     if (!checkBoundsLight || !checkBoundsDark)
     {
         checkBoundsLight = true;
@@ -139,7 +149,7 @@ void Filter::contrastUp()
     {
         for (size_t j = 0; j < photo.getSizeY(); ++j)
         {
-            color = photo.activeImage.getPixel(i,j);
+            color = photo.getPixel(i,j);
             if (color.r < NSColors::maxColorValue &&
                 color.b < NSColors::maxColorValue &&
                 color.g < NSColors::maxColorValue)
@@ -152,7 +162,7 @@ void Filter::contrastUp()
                     color.g += NSColors::step;
                     color.b += NSColors::step;
 
-                    photo.activeImage.setPixel(i,j,color);
+                    photo.setPixel(i,j,color);
                 }
             }
         }
@@ -162,6 +172,8 @@ void Filter::contrastUp()
 
 void Filter::contrastDown()
 {
+    std::lock_guard<std::mutex> lock(mut);
+
     if (!checkBoundsLight || !checkBoundsDark)
     {
         checkBoundsLight = true;
@@ -173,7 +185,7 @@ void Filter::contrastDown()
     {
         for (size_t j = 0; j < photo.getSizeY(); ++j)
         {
-            color = photo.activeImage.getPixel(i,j);
+            color = photo.getPixel(i,j);
             if (color.r > NSColors::minColorValue &&
                 color.b > NSColors::minColorValue &&
                 color.g > NSColors::minColorValue)
@@ -186,10 +198,15 @@ void Filter::contrastDown()
                     color.g -= NSColors::step;
                     color.b -= NSColors::step;
 
-                    photo.activeImage.setPixel(i,j,color);
+                    photo.setPixel(i,j,color);
                 }
             }
         }
     }
     photo.setImage();
+}
+void Filter::saveImage()
+{
+    std::lock_guard<std::mutex> lock(mut);
+    photo.saveImage();
 }

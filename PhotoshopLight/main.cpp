@@ -1,26 +1,9 @@
 #include "ViewController.h"
+#include <iostream>
+#include "Exception.h"
 
 
-
-
-
-
-
-
-
-
-
-//TODO: Gettera return const reference
-
-//TODO: TAB
-
-
-
-
-
-
-
-
+void checkFontAndImage(bool fontStatus, bool imageStatus, std::string fontPath, std::string imagePath);
 
 static int run()
 {
@@ -32,12 +15,18 @@ static int run()
     window.setVerticalSyncEnabled(true);
 
     ViewController view;
-    // TODO: use exc and throw when font didn't load
-    if (!view.loadFont())
+
+    try
     {
+        checkFontAndImage(view.loadFont(),view.loadImage(),view.getFontPath(),view.getImagePath());
+    }
+    catch(PhotoshipException &ex)
+    {
+       std::cout << ex.getErrorMsg();
         window.close();
         return 1;
     }
+
 
     while (window.isOpen())
     {
@@ -47,6 +36,11 @@ static int run()
             if (event.type == sf::Event::Closed ||sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             {
                 window.close();
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+            {
+                 view.saveImage();
             }
 
             view.editImage(event);
@@ -66,8 +60,20 @@ static int run()
     return 0;
 }
 
-
 int main()
 {
     return run();
+}
+
+void checkFontAndImage(bool fontStatus, bool imageStatus, std::string fontPath,  std::string imagePath)
+{
+    if (!fontStatus)
+    {
+        throw PhotoshipException(fontPath);
+    }
+
+    if (!imageStatus)
+    {
+        throw PhotoshipException(imagePath);
+    }
 }

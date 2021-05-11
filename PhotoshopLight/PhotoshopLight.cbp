@@ -12,6 +12,8 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-pedantic" />
+					<Add option="-Wextra" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
@@ -51,8 +53,10 @@
 		</Linker>
 		<Unit filename="ControllerLogic.cpp" />
 		<Unit filename="ControllerLogic.h" />
-		<Unit filename="Filtr.cpp" />
-		<Unit filename="Filtr.h" />
+		<Unit filename="Exception.cpp" />
+		<Unit filename="Exception.h" />
+		<Unit filename="Filter.cpp" />
+		<Unit filename="Filter.h" />
 		<Unit filename="Photo.cpp" />
 		<Unit filename="Photo.h" />
 		<Unit filename="ViewController.cpp" />

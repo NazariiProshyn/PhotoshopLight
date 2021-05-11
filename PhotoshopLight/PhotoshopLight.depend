@@ -1,6 +1,8 @@
 # depslib dependency file v1.0
-1620399304 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
+1620743608 source:d:\projects\photoshopl\photoshoplight\photoshoplight\main.cpp
 	"ViewController.h"
+	<iostream>
+	"Exception.h"
 
 1618584667 d:\_prog_liebs\sfml-2.5.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -1243,17 +1245,18 @@
 1620172449 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtrs.cpp
 	"Filtrs.h"
 
-1620314127 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
+1620738725 source:d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.cpp
 	"ViewController.h"
 
-1620226745 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
+1620738002 d:\projects\photoshopl\photoshoplight\photoshoplight\viewcontroller.h
 	"Information.h"
 	"Photo.h"
-	"Filtr.h"
+	"Filter.h"
 	"ControllerLogic.h"
 	<sstream>
 	<string>
 	<vector>
+	<thread>
 
 1619438371 d:\projects\photoshopl\photoshoplight\photoshoplight\information.h
 
@@ -1266,23 +1269,55 @@
 1619715089 d:\projects\photoshopl\photoshoplight\photoshoplight\controllerlogic.h
 	<vector>
 
-1620401980 d:\projects\photoshopl\photoshoplight\photoshoplight\photo.h
+1620732468 d:\projects\photoshopl\photoshoplight\photoshoplight\photo.h
 	<SFML/Graphics.hpp>
 
-1620398912 d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.h
+1620728352 d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.h
 	"Photo.h"
 	<SFML/Graphics.hpp>
 	<string>
+	<mutex>
 
-1620401980 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.cpp
+1620728338 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filtr.cpp
 	"Filtr.h"
 
-1620398310 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photo.cpp
+1620687049 source:d:\projects\photoshopl\photoshoplight\photoshoplight\photo.cpp
 	"Photo.h"
 
 1620392297 source:d:\projects\photoshopl\photoshoplight\photoshoplight\exception.cpp
 	"Exception.h"
 
-1620392365 d:\projects\photoshopl\photoshoplight\photoshoplight\exception.h
+1620423593 d:\projects\photoshopl\photoshoplight\photoshoplight\exception.h
 	<string>
+	<iostream>
+	<stdexcept>
+
+1617114291 source:d:\projects\photoshopl\photoshoplight\photoshoplight\threadpool.cpp
+	<iostream>
+	"threadPool.h"
+
+1617114198 d:\projects\photoshopl\photoshoplight\photoshoplight\threadpool.h
+	<vector>
+	<functional>
+	<thread>
+	<atomic>
+	"threadSafeQueue.h"
+
+1617114197 d:\projects\photoshopl\photoshoplight\photoshoplight\threadsafequeue.h
+	<mutex>
+	<condition_variable>
+	<queue>
+	<functional>
+
+1617096443 source:d:\projects\photoshopl\photoshoplight\photoshoplight\threadsafequeue.cpp
+	"threadSafeQueue.h"
+
+1620736909 d:\projects\photoshopl\photoshoplight\photoshoplight\filter.h
+	"Photo.h"
+	<SFML/Graphics.hpp>
+	<string>
+	<mutex>
+
+1620732990 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filter.cpp
+	"Filter.h"
 
