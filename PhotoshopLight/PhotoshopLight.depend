@@ -1321,3 +1321,52 @@
 1620732990 source:d:\projects\photoshopl\photoshoplight\photoshoplight\filter.cpp
 	"Filter.h"
 
+1623183372 source:d:\projects\c++\cb\photoshoplight\photoshoplight\controllerlogic.cpp
+	"ControllerLogic.h"
+
+1623183372 d:\projects\c++\cb\photoshoplight\photoshoplight\controllerlogic.h
+	<vector>
+
+1623183372 source:d:\projects\c++\cb\photoshoplight\photoshoplight\exception.cpp
+	"Exception.h"
+
+1623183372 d:\projects\c++\cb\photoshoplight\photoshoplight\exception.h
+	<string>
+	<iostream>
+	<stdexcept>
+
+1623183372 source:d:\projects\c++\cb\photoshoplight\photoshoplight\filter.cpp
+	"Filter.h"
+
+1623183372 d:\projects\c++\cb\photoshoplight\photoshoplight\filter.h
+	"Photo.h"
+	<SFML/Graphics.hpp>
+	<string>
+	<mutex>
+
+1623183372 d:\projects\c++\cb\photoshoplight\photoshoplight\photo.h
+	<SFML/Graphics.hpp>
+
+1623183372 source:d:\projects\c++\cb\photoshoplight\photoshoplight\main.cpp
+	"ViewController.h"
+	<iostream>
+	"Exception.h"
+
+1623183372 d:\projects\c++\cb\photoshoplight\photoshoplight\viewcontroller.h
+	"Information.h"
+	"Photo.h"
+	"Filter.h"
+	"ControllerLogic.h"
+	<sstream>
+	<string>
+	<vector>
+	<thread>
+
+1623183372 d:\projects\c++\cb\photoshoplight\photoshoplight\information.h
+
+1623183372 source:d:\projects\c++\cb\photoshoplight\photoshoplight\photo.cpp
+	"Photo.h"
+
+1623183372 source:d:\projects\c++\cb\photoshoplight\photoshoplight\viewcontroller.cpp
+	"ViewController.h"
+
